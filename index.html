@@ -14,7 +14,7 @@
     <div class='container'>
       {{#link-to 'index' class="navbar-brand"}}Gr8divide{{/link-to}}
       <ul class='nav navbar-nav navbar-right'>
-        <li>{{#link-to 'index' class="active"}}Home{{/link-to}}</li>
+        <li>{{#link-to 'index'}}Home{{/link-to}}</li>
         <li>{{#link-to 'about'}}About{{/link-to}}</li>
       </ul>
     </div>
@@ -28,16 +28,21 @@
   <footer class='container'>
     <hr />
     <p class='pull-left'>&copy; 2013 Gr8divide Media Design</p>
-    <p class='pull-right'><a href='#/credits'>Credits</a></p>
+    <p>{{#link-to 'credits' class="pull-right"}}Credits{{/link-to}}</p>
   </footer>
   </script>
 
   <script type="text/x-handlebars" data-template-name="index">
     <h1>Welcome you dirty scoundrel!</h1>
+    <p> There are {{productsCount}} products</p>
+    <img {{bind-attr src='logo'}} alt='HUGZ(logo)' />
+    <p>Rendered on {{time}} </p>
   </script>
 
   <script type="text/x-handlebars" data-template-name="about">
     <h2>About the site, obviously you are loving it at this point</h2>
+    <p> Here is one of our trusted confidants <h2>{{contactName}}</h2> the Nunna </p>
+    <img {{bind-attr src='avatar'}} alt='authorpic' />
   </script>
 
    <script type='text/x-handlebars' data-template-name='credits'>
