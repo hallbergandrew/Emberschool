@@ -12,10 +12,10 @@
   <script type="text/x-handlebars" data-template-name="application">
   <div class='navbar navbar-default'>
     <div class='container'>
-      <a href='#' class='navbar-brand'></a>
+      {{#link-to 'index' class="navbar-brand"}}Gr8divide{{/link-to}}
       <ul class='nav navbar-nav navbar-right'>
-        <li><a class=active href='#/'>Home</a></li>
-        <li><a href='#/aboutus'>About</a></li>
+        <li>{{#link-to 'index' class="active"}}Home{{/link-to}}</li>
+        <li>{{#link-to 'about'}}About{{/link-to}}</li>
       </ul>
     </div>
   </div>
