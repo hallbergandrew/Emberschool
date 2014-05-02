@@ -58,7 +58,9 @@
     {{#each}}
     <li class="row">
       <img {{bind-attr src='image'}} class='img-thumbnail col-md-5'/>
+      {{#link-to 'product' this classNames='list-group-item'}}
       <h3>{{title}}</h3>
+      {{/link-to}}
         <div class='col-md-7'>
 
       <p>{{description}}</p>
@@ -82,6 +84,12 @@
       </li>
       {{/each}}
       </ul>
+  </script>
+  <script type='text/x-handlebars' data-template-name='product'>
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+    <p>Buy for ${{price}}</p>
+    <img {{bind-attr src="image"}} class='img-thumbnail' />
   </script>
 </body>
 </html>
