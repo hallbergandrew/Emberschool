@@ -8,6 +8,7 @@ App.Router.map(function() {
   this.resource('products');
   this.resource('product', { path: '/products/:title'});
   this.resource('contacts');
+  this.resource('contact', { path: '/contacts/:name'});
 });
 
 App.IndexController = Ember.Controller.extend({
@@ -30,7 +31,12 @@ App.ContactsRoute = Ember.Route.extend({
   model: function() {
     return App.CONTACTS;
   }
+});
 
+App.ContactRoute = Ember.Route.extend({
+  model: function(params) {
+    return App.CONTACTS.findBy('name', params.name);
+  }
 });
 
 App.ProductsRoute = Ember.Route.extend({
